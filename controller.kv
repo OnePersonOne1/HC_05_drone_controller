@@ -1,0 +1,13 @@
+# controller.kv (Kivy 앱의 레이아웃 정의)
+<BoxLayout>:
+    orientation: 'horizontal'
+    # 왼쪽 조이스틱 (예: 스로틀/요 제어)
+    Joystick:
+        id: left_stick
+        sticky: False
+        on_pad: app.on_pad('left', self.pad)   # 조이스틱 값 변경 시 호출
+    # 오른쪽 조이스틱 (예: 롤/피치 제어)
+    Joystick:
+        id: right_stick
+        sticky: False
+        on_pad: app.on_pad('right', self.pad)
